@@ -1,0 +1,48 @@
+
+<div ng-app="ng-app">
+  <h2>BDD - Behavior Driven Development</h2>
+  <p>
+    Behavior driven development is a type of development, not to be confused with TDD which is Test Driven Development.
+    BDD specifies that tests of any unit of software should be specified in terms of the desired behavior of the unit.<span class="superscript">1</span>In other words, instead of defining a whole bunch of functions to perform your unit tests, you write a lot of
+    scenarios that describe the context in which the test is being written in. Example...
+  </p>
+  <h4>TDD</h4><code>
+    <pre>function campaignControllerShouldOnlyHaveThreeCampaignsLoadedInitially() {
+&nbsp; &nbsp; var controller = CampaignsController.create();
+&nbsp; &nbsp; Em.run(function(){
+&nbsp; &nbsp; &nbsp; &nbsp; controller.set('content', data);	
+&nbsp; &nbsp; })
+&nbsp; &nbsp; return controller.get('content').length === 3;
+}</pre></code>
+  <h4>BDD</h4><code>
+    <pre>describe('Campaigns Controller', function () {
+&nbsp; &nbsp; describe('#filteredCampaigns', function () {
+&nbsp; &nbsp; &nbsp; &nbsp;it('should have a length of 3 campaigns when loading data and applying no filtering', function() {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var controller = CampaignsController.create();
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Em.run(function() {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;controller.set('content', data);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; expect(controller.get('filteredCampaigns')).to.have.length(3);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; controller.destroy();
+&nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp;});
+});</pre></code>
+  <p>
+    What if you want to run a multitude of tests that require the same initialization function, like loading data into
+    the controller, Mocha supports a <code>before() </code>function as well as an<code>after()</code>function which will happen after all the tests in that suite are executed. There is also a <code>beforeEach()</code>and an <code>afterEach()</code>to handle any code that you want to execute before and after each test.
+  </p><code>
+    <pre>before(function() {
+&nbsp; &nbsp; controller.set('content', data);
+}</pre></code>
+  <p></p>
+  <div class="footnotes">
+    <hr/>
+    <ol>
+      <li><a href="http://en.wikipedia.org/wiki/Behavior-driven_development">Wikipedia</a></li>
+    </ol>
+  </div>
+  <ul class="pager">
+    <li class="previous"><a href="#/unit-testing/testacular">&larr; Testacular</a></li>
+    <li class="next"><a href="#/unit-testing/examples">Examples &rarr;</a></li>
+  </ul>
+</div>

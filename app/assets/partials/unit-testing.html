@@ -1,0 +1,34 @@
+
+<div ng-app="ng-app">
+  <h2>For the unfamiliar in the audience...</h2>
+  <p>
+     
+    The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it 
+    from the remainder of the code, and determine whether or not it behaves exactly as you expect<span class="superscript">1</span>
+  </p>
+  <p>
+     
+    Unit testing can prove invaluable as your functions grow more complicated and start adding increased functionality. 
+    For example, you will want to validate a function that validates a password field to make sure the user doesn't enter 
+    something they're not supposed to. This password validation function will probably using a RegEx. Let's take a look...
+  </p><code> 
+    <pre> 
+function passwordValidation (password) {
+&nbsp; &nbsp; return /^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{8,}$/.test(password);
+}</pre></code>
+  <p>
+     
+    Unless you natively speak RegEx, you will want to verify that this function does only what you want it to do
+    and it does what you need it to do. This is where unit-testing comes in!
+  </p>
+  <div class="footnotes">
+    <hr/>
+    <ol>
+      <li><a href="http://msdn.microsoft.com/en-us/library/aa292197(v=vs.71).aspx">Unit-Testing description</a></li>
+    </ol>
+  </div>
+  <ul class="pager">
+    <li class="previous"><a href="#/overview">&larr; Overview</a></li>
+    <li class="next"><a href="#/unit-testing/testrunners">Test Runners &rarr;</a></li>
+  </ul>
+</div>

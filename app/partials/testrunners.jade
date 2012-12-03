@@ -1,0 +1,39 @@
+div(ng-app='ng-app')
+	h2 Test Runners...what are they?
+	p
+		| A test runner is an application that executes these unit-tests. It can also execute integration or acceptance tests.
+		| Tests are usually written in suites so that the test runner can execute just one suite of tests at a time so you can
+		| focus on only the tests that you care about. How often you run all tests can vary as much as every time you commit
+		| or when leading up to a release.
+	p
+		| In Javascript, two test runners have become popular; 
+		a(href='http://pivotal.github.com/jasmine/') Jasmine 
+		|and 
+		a(href='http://visionmedia.github.com/mocha/') Mocha.
+		| The basic <i>Describe</i> and <i>it</i> BDD pattern between the two frameworks is identical. Assertions are done 
+		| differently as well as the interface to asynchronous tests are different but mostly they are comparable.
+		| Illuminate is using Mocha and Chai. Chai is a plugin to Mocha that allows you to use assertions. 
+		span.superscript 1
+
+	p
+		| A typical assertion unit-test in Illuminate using Mocha and Chai will look something like this..
+	code 
+		pre
+			| expect(view.$('svg')).to.have.length(1);
+			| expect(didInsertElementCalled).to.be.true;
+	p
+		| What about running a suite of tests where you need to pre-load data each time? 
+
+
+
+	ul.pager
+		li.previous
+			a(href='#/unit-testing') &larr; Unit-Testing
+		li.next
+			a(href='#/unit-testing/bdd') BDD &rarr;
+
+	div.footnotes
+		hr
+		ol
+			li
+				a(href='http://stackoverflow.com/questions/9710297/jasmine-vs-mocha-javascript-testing-for-rails-3-1') Stackoverflow
