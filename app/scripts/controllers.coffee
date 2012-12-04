@@ -41,7 +41,7 @@ angular.module('app.controllers', [])
 
     $scope.topics = [#topics
         {
-            linkText : "Javascript unit-testing and d3.js",
+            linkText : "Overview",
             uri : "#/overview",
             subs : [#subtopics
                 {
@@ -67,18 +67,6 @@ angular.module('app.controllers', [])
                         linkText : "Libraries",
                         uri : "#/unit-testing/libraries"
                       }
-                    ]
-                },{
-                    linkText : "d3.js",
-                    uri : "#/d3",
-                    subs : [
-                        {
-                            linkText : "What is it?",
-                            uri : "#/d3/about"
-                        },{
-                            linkText : "No callbacks...say wha?",
-                            uri : "#/d3/no-callbacks"
-                        }
                     ]
                 }
             ]

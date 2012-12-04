@@ -29,11 +29,6 @@ App.config([
     .when('/unit-testing/challenges', {templateUrl:'/partials/challenges.html'})
     .when('/unit-testing/examples',
       {templateUrl: '/partials/examples.html'})
-    .when('/d3', {templateUrl: '/partials/d3.html'})
-    .when('/d3/about', {templateUrl: '/partials/d3-about.html'})
-    .when('/d3/no-callback', {templateUrl: '/partials/no-callback.html'})
-    .when('/todo', {templateUrl: '/partials/todo.html'})
-
     # Catch all
     .otherwise({redirectTo: '/overview'})
 

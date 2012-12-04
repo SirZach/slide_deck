@@ -1,5 +1,34 @@
 div(ng-app='ng-app')
 	h2 The challenges with unit-testing in Javascript
+	p
+		| The hard part about testing Javascript is that it often lacks any units. Often, the Javascript is mixed in with
+		| the templates and closely intertwined with back-end logic. Worst case scenario : the code is completely mixed with
+		| the HTML as inline event-handlers. 
+		a(href='http://coding.smashingmagazine.com/2012/06/27/introduction-to-javascript-unit-testing/') Example
+	p
+		| Solutions like jQuery, AngularJS, EmberJS, Knockout etc encourage coders to separate their code into smaller and more
+		| modular units partly to address this issue. 
+	h2 The data
+	p
+		| In Illuminate and other apps, we have models to represent a set of data. While unit tests should generally operate on
+		| their own, you will want to stub out data for these tests in a modular way. It wouldn't be good to have to stub out
+		| data in each test, especially if the same data is used throughout multiple tests. One way to do this is to create the
+		| data in JSON files on the server. However, you won't want your test calls to make explicit calls to those JSON files,
+		| you will want your test cases to make normal REST Api calls that just happen to retrieve your stubbed out, reliable
+		| data. 
+	p
+		| 2 (at least) acceptable approaches to this : 
+	ul
+		li
+			| Stub out the REST Api calls on a test server so that it's running its own server
+			| and always sends backed canned data. 
+		li
+			| Load the app under slighty different circumstances to intercept any AJAX calls you may be making and send them
+			| off to your JSON files instead of your REST Api server.
+	p
+		| Illuminate is going with the second approach. It involves significantly less coding, maintenance, and is more
+		| developer-friendly considering we all don't have to have a second server running on our machines.
+
 
 	ul.pager
 		li.previous
