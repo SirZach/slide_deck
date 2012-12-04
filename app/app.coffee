@@ -26,6 +26,7 @@ App.config([
     .when('/unit-testing/testacular',
       {templateUrl: '/partials/testacular.html'})
     .when('/unit-testing/bdd', {templateUrl: '/partials/bdd.html'})
+    .when('/unit-testing/challenges', {templateUrl:'/partials/challenges.html'})
     .when('/unit-testing/examples',
       {templateUrl: '/partials/examples.html'})
     .when('/d3', {templateUrl: '/partials/d3.html'})
